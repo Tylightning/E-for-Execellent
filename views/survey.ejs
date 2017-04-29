@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width">
+  <title>Survey</title>
+</head>
+<body>
+  
+  
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Do You Dare ?</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://output.jsbin.com/gohuxavide">Home</a></li>
+        <li><a href="/signup">Sign up</a></li>
+        <li><a href="#">Survey</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+     
+    </div>
+  </div>
+</nav>
+<form method='POST' action='/survey'>
+  <center><div class="first">
+  <div class="parallax"><center><h1>Survey<h3>Are you Ready ?</h3></h1></center></div>
+<div class="container">
+  <div class ="row">
+  
+    <div class="col-sx-12 col-md-6 col-lg-6">
+      <h1>What is your Name?</h1>
+      <input type="text" class="form-control" id='name' name="name" placeholder='Name' />
+    </div>
+  <div class="col-sx-12 col-md-6 col-lg-6">
+      <h1>What year or date did it happen??</h1>
+      <input id='date' class="form-control" type='text' name="date" />
+    </div>
+    </div>
+    <div class="row">
+     <div class="col-sx-12 col-md-6 col-lg-6">
+      <h1>What do you do on a regular day?</h1>
+      <textarea rows="4" class="form-control" cols="50" id="desc" name="desc" >
+      </textarea>
+    </div>
+    <div class="col-sx-12 col-md-6 col-lg-6">
+      <h1>What was the weather like?</h1>
+      <textarea rows="4" cols="50" class="form-control" id='weather' name='weather'>
+      </textarea>
+    </div>
+  </div>
+    <div class="row">
+       <div class="col-sx-12 col-md-6 col-lg-6">
+      <h1>What did you hear or see?</h1>
+      <textarea rows="4" cols="50" id='surround' class="form-control" name='surround'>
+      </textarea>
+    </div>
+      <div class="col-sx-12 col-md-12 col-lg-12">
+      <center><button class="btn ">Submit</button></center>
+      </div>
+    </div>
+  </div>
+</div>
+    </div></center>
+</form>
+</body>
+</html>
