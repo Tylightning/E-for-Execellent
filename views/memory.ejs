@@ -35,11 +35,11 @@
 <header>
   <center><h1>Where Are We Going Today ?</h1></center>
   </header>
-  <div class="container">
+  <div class="container thumbnails">
 <div class="row">
   <div class="col-sm-12 col-md-6 col-lg-4">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="http://media.cntraveler.com/photos/56d889037243f8953e3446a9/master/w_775,c_limit/montreal-city-skyline-cr-getty.jpg" alt="...">
       <div class="caption">
         <h3></h3>
         <p></p>
@@ -49,7 +49,7 @@
   </div>
 <div class="col-sm-12 col-md-6 col-lg-4">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5230047963001_5203640497001-vs.jpg?pubId=5104226627001&videoId=5203640497001" alt="...">
       <div class="caption">
         <h3></h3>
         <p></p>
@@ -59,7 +59,7 @@
   </div>
   <div class="col-sm-12 col-md-6 col-lg-4">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="http://cdn-image.travelandleisure.com/sites/default/files/styles/964x524/public/1464905461/World-Best-Cities-Victoria-BC-WBCANADA0616.jpg?itok=n386NVWL" alt="...">
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p></p>
@@ -69,7 +69,7 @@
   </div>
   <div class="col-sm-12 col-md-6 col-lg-4">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="https://i.ytimg.com/vi/sAjT8DAaJRQ/maxresdefault.jpg" alt="...">
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p></p>
@@ -79,7 +79,7 @@
   </div>
   <div class="col-sm-12 col-md-6 col-lg-4">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="https://www.thestar.com/content/dam/thestar/news/canada/2016/10/13/victoria-best-city-for-women-in-canada-windsor-the-worst-report/victoriajpg.jpg.size.custom.crop.1086x727.jpg" alt="...">
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p></p>
@@ -89,7 +89,7 @@
   </div>
   <div class="col-sm-12 col-md-6 col-lg-4">
     <div class="thumbnail">
-      <img src="..." alt="...">
+      <img src="https://www.desmog.ca/sites/beta.desmogblog.com/files/styles/full_width_blog_image/public/blogimages/Vancouver%20Green%20City.jpg?itok=ITTmH8RW" alt="...">
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p></p>
@@ -99,22 +99,87 @@
   </div>
   
   </div>
-    
-</nav>
-<script>
-$(".button3").click(function(){
-  window.location.href = '/quiz';
-});
-$(".button2").click(function(){
-  window.location.href = '/signup';
-});
-$(".button1").click(function(){
-  window.location.href = '';
-});
+  </div>
   
+  <div id = "detail-view">
+  <h1 id = "name"> Krysta </h1><small id = "date-place">Brooklyn,NY - 12/12/17</small>
+  <div class = "memory-image-container"><img id = "memory-image" src = ""></div>
+  <audio controls>
+  <source id = "audio" src="horse.mp3" type="audio/mpeg">
+</audio>
+    
+    
+  <div id = "desc" class = "desc-container"> 
+    <p id = "desc-weather"> Weather: Sunny </p>
+    <p id = "desc-surroundings"> Surrondings: Trees</p>
+    <p id = "desc-summary"> Summary: </p>
 
-</script>
+    
+  </div>
+  </div>
+    <script>
+        var serviceData = [];
+  // $.ajax({
+  //   url: "/memory",
+  //   data: data,
+  //   success: updateThumbnail,
+  //   dataType: 'json' 
+  // });
+  
+  function updateThumbnail(update){
+     serviceData = update;
+   
+  }
+  
+  $(".btn-primary").click(function(){
+    $(".thumbnails").hide();
+    console.log("sdefrgth");
+    updateDetailView();
+    
+  });
+  
+  var data = { 
+  
+  name: "Krysta",
+    surroundings:"trees",
+    weather:"sunny",
+    summary:"Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+   
+    
+    location: "Brooklyn,NY", 
+    image: "http://kingofwallpapers.com/mind/mind-027.jpg",
+    date: "12/12/17",
+    sound: "test.mp3"
+  };
+  
+  function updateDetailView(givendata){
+    date = givendata;
+    
+    $("#audio")[0].src = data.sound;
+    
+    $("#name")[0].innerText = data.name
+  
+  $("#date-place")[0].innerText = 
+    data.location + " " + data.date;
+  
+  $("#desc-weather")[0].innerText = "Weather: " +
+    data.weather
+  
+  $("#desc-surroundings")[0].innerText = "Surroundings: " +
+    data.surroundings
+   
+  $("#desc-summary")[0].innerText = "Summary: " +
+    data.summary
+   
+  $("#memory-image")[0].src = data.image;
+  
+}
 
+
+
+
+
+    </script>
 
 </body>
 </html>

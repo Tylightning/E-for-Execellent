@@ -39,7 +39,7 @@ app.use(methodOverride());
 
 app.use('/', require('./controller/index'));
 app.use('/auth', require('./controller/auth'));
-app.use('/Memory', require('./controller/memory'));
+app.use('/memory', require('./controller/memory'));
 
 app.listen(port, function(){
   console.log("Listening at " + port);

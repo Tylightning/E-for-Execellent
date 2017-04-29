@@ -23,7 +23,7 @@ router.post('/Survey', function(req, res){
     
     console.log(d);
     
-    var o =new Memory ({
+    var o = new Memory ({
         name:   d.name,
         desc:   d.desc,
         weather: d.weather,
@@ -37,13 +37,21 @@ router.post('/Survey', function(req, res){
     o.save(function(err){
          if(err) throw err;
          console.log('save sucessful');
+         
+         res.redirect('/memory');
      });
-    
-    
-    
-    res.render('survey');
+
 });
 
 
+router.get("/api", function(req, res){
+    
+    Memory.find({}).exec(function(err, data){
+        if(err){
+            console.log(err);
+        }
+        res.send(data);
+    });
+});
 
 module.exports = router;
